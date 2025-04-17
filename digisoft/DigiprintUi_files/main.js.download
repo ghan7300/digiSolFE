@@ -1,0 +1,402 @@
+import { injectQuery as __vite__injectQuery } from "/@vite/client";import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/main.js");var __defProp = Object.defineProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+
+// src/main.ts
+import { bootstrapApplication } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_platform-browser.js?v=5b4555af";
+
+// src/app/app.config.ts
+import { provideRouter } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_router.js?v=5b4555af";
+import { provideHttpClient } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_common_http.js?v=5b4555af";
+
+// src/app/services/services.component.ts
+import { Component } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+import { CommonModule } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_common.js?v=5b4555af";
+import * as i02 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+
+// src/app/service/api.service.ts
+var api_service_exports = {};
+__export(api_service_exports, {
+  ApiService: () => ApiService
+});
+import { Injectable } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+import * as i0 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+import * as i1 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_common_http.js?v=5b4555af";
+var ApiService = class _ApiService {
+  http;
+  baseUrl = "http://localhost:8080/api/services";
+  constructor(http) {
+    this.http = http;
+  }
+  getAllServices() {
+    return this.http.get(this.baseUrl);
+  }
+  createService(service) {
+    return this.http.post(this.baseUrl, service);
+  }
+  static \u0275fac = function ApiService_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _ApiService)(i0.\u0275\u0275inject(i1.HttpClient));
+  };
+  static \u0275prov = /* @__PURE__ */ i0.\u0275\u0275defineInjectable({ token: _ApiService, factory: _ApiService.\u0275fac, providedIn: "root" });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassMetadata(ApiService, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], () => [{ type: i1.HttpClient }], null);
+})();
+
+// src/app/services/services.component.ts
+import * as i2 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_common.js?v=5b4555af";
+var ServicesComponent = class _ServicesComponent {
+  api;
+  services = [
+    {
+      id: 1,
+      title: "Easy Printing Setup",
+      description: "Set up your printer in just a few easy steps. 123 Com Setup",
+      category: "setup"
+    },
+    {
+      id: 2,
+      title: "Smart Printing Setup",
+      description: "Set up your printer in just a few simple steps. 123 Com SetUp",
+      category: "setup"
+    },
+    {
+      id: 3,
+      title: "Innovative solutions",
+      description: "We provide managed printing services to enhance your equipment productivity...",
+      category: "solutions"
+    }
+  ];
+  constructor(api) {
+    this.api = api;
+  }
+  ngOnInit() {
+    this.api.getAllServices().subscribe((data) => {
+    });
+  }
+  static \u0275fac = function ServicesComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _ServicesComponent)(i02.\u0275\u0275directiveInject(ApiService));
+  };
+  static \u0275cmp = /* @__PURE__ */ i02.\u0275\u0275defineComponent({ type: _ServicesComponent, selectors: [["app-services"]], decls: 40, vars: 0, consts: [[1, "container-fluid", "px-0"], [1, "py-5", 2, "background-color", "#2764a6"], [1, "container"], [1, "text-center", "mb-4", "text-white", 2, "color", "#333"], [1, "text-center", "mb-5", "fs-5", 2, "color", "#f9f9f9"], [1, "container", "my-5"], [1, "row", "align-items-center"], [1, "col-md-6"], ["src", "assets/images/printer02.jpg.png", "alt", "Printer Setup", 1, "img-fluid", "rounded", "shadow"], [1, "col-md-6", "bg-white", "p-4", "rounded"], [1, "mb-3"], [1, "lead", "text-dark", "mb-0"], [1, "bg-dark", "text-white", "py-5"], [1, "row", "justify-content-center"], [1, "col-lg-22"], [1, "mb-0", "fs-5"], ["src", "assets/images/printer02.jpg.png", "alt", "Smart Printer Setup", 1, "img-fluid", "rounded", "shadow"], [1, "col-lg-14"], [1, "mb-4", "text-white"], [1, "text-white"], [1, "mb-0"]], template: function ServicesComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i02.\u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "h1", 3);
+      i02.\u0275\u0275text(4, "Getting Started With Printing");
+      i02.\u0275\u0275elementEnd();
+      i02.\u0275\u0275elementStart(5, "p", 4);
+      i02.\u0275\u0275text(6, " Choose your operating system from the options below to begin the correct printer driver installation for your device. ");
+      i02.\u0275\u0275elementEnd()()();
+      i02.\u0275\u0275elementStart(7, "div", 5)(8, "div", 6)(9, "div", 7);
+      i02.\u0275\u0275element(10, "img", 8);
+      i02.\u0275\u0275elementEnd();
+      i02.\u0275\u0275elementStart(11, "div", 9)(12, "h2", 10);
+      i02.\u0275\u0275text(13, "Easy Printing Setup");
+      i02.\u0275\u0275elementEnd();
+      i02.\u0275\u0275elementStart(14, "p", 11);
+      i02.\u0275\u0275text(15, "Set up your printer in just a few easy steps.");
+      i02.\u0275\u0275elementEnd()()()();
+      i02.\u0275\u0275elementStart(16, "div", 12)(17, "div", 2)(18, "div", 13)(19, "div", 14)(20, "p", 15);
+      i02.\u0275\u0275text(21, " Switching to a cloud-based print server can help resolve common printing issues, such as enabling mobile printing, improving authentication and identity management,and reducing dependency on traditional setups. It ensures access to the latest multifunction printers with cutting-edge technology, tailored to your business needs. These printers optimize printing time, save space, and enhance cost efficiency. ");
+      i02.\u0275\u0275elementEnd()()()()();
+      i02.\u0275\u0275elementStart(22, "div", 5)(23, "div", 6)(24, "div", 9)(25, "p", 11);
+      i02.\u0275\u0275text(26, "Set up your printer in just a few simple steps. 123 Com SetUp");
+      i02.\u0275\u0275elementEnd()();
+      i02.\u0275\u0275elementStart(27, "div", 7);
+      i02.\u0275\u0275element(28, "img", 16);
+      i02.\u0275\u0275elementEnd()()();
+      i02.\u0275\u0275elementStart(29, "div", 1)(30, "div", 2)(31, "div", 13)(32, "div", 17)(33, "h2", 18);
+      i02.\u0275\u0275text(34, "Introducing innovative solutions for your home printing needs.");
+      i02.\u0275\u0275elementEnd();
+      i02.\u0275\u0275elementStart(35, "div", 19)(36, "p", 10);
+      i02.\u0275\u0275text(37, " We provide managed printing services to enhance your equipment's productivity while reducing printing costs. Our services go beyond just renting or leasing printers, offering comprehensive solutions that extend beyond pay-per-use or cost-per-copy models. ");
+      i02.\u0275\u0275elementEnd();
+      i02.\u0275\u0275elementStart(38, "p", 20);
+      i02.\u0275\u0275text(39, " Our value proposition includes a real-time monitoring service that enables us to conduct printing audits, significantly reducing your printing costs. Many companies are unaware of their annual printing expenses, including machine amortization, toner, and paper costs. Managing these expenses internally can be inefficient due to limited resources or expertise. ");
+      i02.\u0275\u0275elementEnd()()()()()()();
+    }
+  }, dependencies: [CommonModule, i2.NgClass, i2.NgComponentOutlet, i2.NgForOf, i2.NgIf, i2.NgTemplateOutlet, i2.NgStyle, i2.NgSwitch, i2.NgSwitchCase, i2.NgSwitchDefault, i2.NgPlural, i2.NgPluralCase, i2.AsyncPipe, i2.UpperCasePipe, i2.LowerCasePipe, i2.JsonPipe, i2.SlicePipe, i2.DecimalPipe, i2.PercentPipe, i2.TitleCasePipe, i2.CurrencyPipe, i2.DatePipe, i2.I18nPluralPipe, i2.I18nSelectPipe, i2.KeyValuePipe], styles: ["\n\n.container[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n  font-family: Arial, sans-serif;\n}\nh1[_ngcontent-%COMP%] {\n  color: #333;\n  margin-bottom: 10px;\n}\n.subtitle[_ngcontent-%COMP%] {\n  color: #666;\n  margin-bottom: 30px;\n}\n.service-section[_ngcontent-%COMP%] {\n  margin: 30px 0;\n}\nh2[_ngcontent-%COMP%] {\n  color: #444;\n  margin-bottom: 15px;\n}\n.content-box[_ngcontent-%COMP%] {\n  background-color: #f9f9f9;\n  padding: 20px;\n  border-radius: 5px;\n  margin-top: 15px;\n  border-left: 4px solid #0066cc;\n}\n.divider[_ngcontent-%COMP%] {\n  height: 1px;\n  background-color: #ddd;\n  margin: 30px 0;\n}\n.footer[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 50px;\n  padding-top: 20px;\n  border-top: 1px solid #ddd;\n}\n.footer-link[_ngcontent-%COMP%] {\n  color: #0066cc;\n  cursor: pointer;\n}\n.footer-link[_ngcontent-%COMP%]:hover {\n  text-decoration: underline;\n}\n.card[_ngcontent-%COMP%] {\n  border-left: 4px solid;\n}\n.card.border-primary[_ngcontent-%COMP%] {\n  border-left-color: #0d6efd;\n}\n.card.border-info[_ngcontent-%COMP%] {\n  border-left-color: #0dcaf0;\n}\nh1[_ngcontent-%COMP%] {\n  font-weight: 300;\n}\nh2[_ngcontent-%COMP%] {\n  font-weight: 400;\n  color: #444;\n}\n.blue-section[_ngcontent-%COMP%] {\n  background-color: #1a365d;\n  color: white;\n  padding: 2rem;\n  border-radius: 8px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.dark-card[_ngcontent-%COMP%] {\n  background-color: #212529 !important;\n  border: none !important;\n}\n.dark-card[_ngcontent-%COMP%]   .card-body[_ngcontent-%COMP%] {\n  padding: 1.5rem;\n}\n/*# sourceMappingURL=services.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i02.\u0275setClassMetadata(ServicesComponent, [{
+    type: Component,
+    args: [{ selector: "app-services", standalone: true, imports: [CommonModule], template: `<div class="container-fluid px-0">\r
+  \r
+  <div class="py-5" style="background-color: #2764a6;">\r
+    <div class="container">\r
+      <h1 class="text-center mb-4 text-white" style="color: #333;">Getting Started With Printing</h1>\r
+      <p class="text-center mb-5 fs-5" style="color: #f9f9f9;">\r
+        Choose your operating system from the options below to begin the correct printer driver installation for your device.\r
+      </p>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="container my-5">\r
+    <div class="row align-items-center">\r
+      <div class="col-md-6">\r
+\r
+        <img src="assets/images/printer02.jpg.png" alt="Printer Setup" \r
+             class="img-fluid rounded shadow">\r
+      </div>\r
+      <div class="col-md-6 bg-white p-4 rounded">\r
+        <h2 class="mb-3">Easy Printing Setup</h2>\r
+        <p class="lead text-dark mb-0">Set up your printer in just a few easy steps.</p>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="bg-dark text-white py-5">\r
+    <div class="container">\r
+      <div class="row justify-content-center">\r
+        <div class="col-lg-22">\r
+          <p class="mb-0 fs-5">\r
+            Switching to a cloud-based print server can help resolve common printing issues, such as enabling mobile printing, improving authentication and identity\r
+             management,and reducing dependency on traditional setups. It ensures access to the latest multifunction printers with cutting-edge technology, tailored \r
+             to your business needs. These printers   optimize printing time, save space, and enhance cost efficiency.\r
+          </p>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="container my-5">\r
+    <div class="row align-items-center">\r
+      <!-- Text Left -->\r
+      <div class="col-md-6 bg-white p-4 rounded">\r
+        \r
+        <p class="lead text-dark mb-0">Set up your printer in just a few simple steps. 123 Com SetUp</p>\r
+      </div>\r
+      <!-- Image Right -->\r
+      <div class="col-md-6">\r
+        <img src="assets/images/printer02.jpg.png" alt="Smart Printer Setup" \r
+             class="img-fluid rounded shadow">\r
+      </div>\r
+    </div>\r
+  </div>\r
+\r
+  <div class="py-5" style="background-color: #2764a6;">\r
+    <div class="container">\r
+      <div class="row justify-content-center">\r
+        <div class="col-lg-14">\r
+          <h2 class="mb-4 text-white">Introducing innovative solutions for your home printing needs.</h2>\r
+          <div class="text-white">\r
+            <p class="mb-3">\r
+              We provide managed printing services to enhance your equipment's productivity while reducing printing costs. \r
+              Our services go beyond just renting or leasing printers, offering comprehensive solutions that extend beyond \r
+              pay-per-use or cost-per-copy models.\r
+            </p>\r
+            <p class="mb-0">\r
+              Our value proposition includes a real-time monitoring service that enables us to conduct printing audits, \r
+              significantly reducing your printing costs. Many companies are unaware of their annual printing expenses, \r
+              including machine amortization, toner, and paper costs. Managing these expenses internally can be inefficient \r
+              due to limited resources or expertise.\r
+            </p>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+  </div>\r
+</div>`, styles: ["/* src/app/services/services.component.css */\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n  font-family: Arial, sans-serif;\n}\nh1 {\n  color: #333;\n  margin-bottom: 10px;\n}\n.subtitle {\n  color: #666;\n  margin-bottom: 30px;\n}\n.service-section {\n  margin: 30px 0;\n}\nh2 {\n  color: #444;\n  margin-bottom: 15px;\n}\n.content-box {\n  background-color: #f9f9f9;\n  padding: 20px;\n  border-radius: 5px;\n  margin-top: 15px;\n  border-left: 4px solid #0066cc;\n}\n.divider {\n  height: 1px;\n  background-color: #ddd;\n  margin: 30px 0;\n}\n.footer {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 50px;\n  padding-top: 20px;\n  border-top: 1px solid #ddd;\n}\n.footer-link {\n  color: #0066cc;\n  cursor: pointer;\n}\n.footer-link:hover {\n  text-decoration: underline;\n}\n.card {\n  border-left: 4px solid;\n}\n.card.border-primary {\n  border-left-color: #0d6efd;\n}\n.card.border-info {\n  border-left-color: #0dcaf0;\n}\nh1 {\n  font-weight: 300;\n}\nh2 {\n  font-weight: 400;\n  color: #444;\n}\n.blue-section {\n  background-color: #1a365d;\n  color: white;\n  padding: 2rem;\n  border-radius: 8px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.dark-card {\n  background-color: #212529 !important;\n  border: none !important;\n}\n.dark-card .card-body {\n  padding: 1.5rem;\n}\n/*# sourceMappingURL=services.component.css.map */\n"] }]
+  }], () => [{ type: ApiService }], null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i02.\u0275setClassDebugInfo(ServicesComponent, { className: "ServicesComponent", filePath: "src/app/services/services.component.ts", lineNumber: 15 });
+})();
+(() => {
+  const id = "src%2Fapp%2Fservices%2Fservices.component.ts%40ServicesComponent";
+  function ServicesComponent_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(new URL("./@ng/component?c=" + id + "&t=" + encodeURIComponent(t), import.meta.url).href, 'import')
+    ).then((m) => m.default && i02.\u0275\u0275replaceMetadata(ServicesComponent, m.default, [i02, i2, api_service_exports], [CommonModule, Component], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && ServicesComponent_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && ServicesComponent_HmrLoad(d.timestamp)));
+})();
+
+// src/app/app.config.ts
+var routes = [
+  { path: "", redirectTo: "services", pathMatch: "full" },
+  { path: "services", component: ServicesComponent }
+];
+var appConfig = {
+  providers: [
+    provideHttpClient(),
+    provideRouter(routes)
+  ]
+};
+
+// src/app/app.component.ts
+import { Component as Component4 } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+import { CommonModule as CommonModule3 } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_common.js?v=5b4555af";
+import { RouterOutlet } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_router.js?v=5b4555af";
+
+// src/app/components/header/header.component.ts
+import { Component as Component2 } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+import * as i03 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+function HeaderComponent_For_5_Template(rf, ctx) {
+  if (rf & 1) {
+    i03.\u0275\u0275elementStart(0, "li", 4)(1, "a", 5);
+    i03.\u0275\u0275text(2);
+    i03.\u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const brand_r1 = ctx.$implicit;
+    i03.\u0275\u0275advance(2);
+    i03.\u0275\u0275textInterpolate(brand_r1);
+  }
+}
+var HeaderComponent = class _HeaderComponent {
+  printerBrands = [
+    "InkJet",
+    "LaserJet",
+    "OfficeJet",
+    "Pixma",
+    "Maxify",
+    "XP",
+    "EcoTank",
+    "WorkForce"
+  ];
+  static \u0275fac = function HeaderComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _HeaderComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i03.\u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], decls: 6, vars: 0, consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "bg-light", "border-bottom"], [1, "container"], [1, "d-flex", "flex-wrap", "w-100", "justify-content-center"], [1, "nav"], [1, "nav-item"], ["href", "#", 1, "nav-link", "text-dark"]], template: function HeaderComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i03.\u0275\u0275elementStart(0, "nav", 0)(1, "div", 1)(2, "div", 2)(3, "ul", 3);
+      i03.\u0275\u0275repeaterCreate(4, HeaderComponent_For_5_Template, 3, 1, "li", 4, i03.\u0275\u0275repeaterTrackByIdentity);
+      i03.\u0275\u0275elementEnd()()()();
+    }
+    if (rf & 2) {
+      i03.\u0275\u0275advance(4);
+      i03.\u0275\u0275repeater(ctx.printerBrands);
+    }
+  }, styles: ["\n\n.printer-brands-header[_ngcontent-%COMP%] {\n  background-color: #f8f8f8;\n  padding: 15px 0;\n  border-bottom: 1px solid #e7e7e7;\n}\n.printer-brands-header[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n.printer-brands-header[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  text-decoration: none;\n  color: #333;\n  font-weight: 500;\n  padding: 5px 10px;\n  border-radius: 4px;\n  transition: all 0.3s ease;\n}\n.printer-brands-header[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: #0066cc;\n  background-color: #e7e7e7;\n}\n/*# sourceMappingURL=header.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i03.\u0275setClassMetadata(HeaderComponent, [{
+    type: Component2,
+    args: [{ selector: "app-header", template: '<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">\r\n    <div class="container">\r\n      <div class="d-flex flex-wrap w-100 justify-content-center">\r\n        <ul  class="nav">\r\n            @for (brand of printerBrands; track brand) {\r\n              <li class="nav-item">\r\n                  <a class="nav-link text-dark" href="#">{{ brand }}</a>\r\n              </li>\r\n            }\r\n          </ul>\r\n      </div>\r\n    </div>\r\n  </nav>', styles: ["/* src/app/components/header/header.component.css */\n.printer-brands-header {\n  background-color: #f8f8f8;\n  padding: 15px 0;\n  border-bottom: 1px solid #e7e7e7;\n}\n.printer-brands-header ul {\n  display: flex;\n  justify-content: center;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n.printer-brands-header a {\n  text-decoration: none;\n  color: #333;\n  font-weight: 500;\n  padding: 5px 10px;\n  border-radius: 4px;\n  transition: all 0.3s ease;\n}\n.printer-brands-header a:hover {\n  color: #0066cc;\n  background-color: #e7e7e7;\n}\n/*# sourceMappingURL=header.component.css.map */\n"] }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i03.\u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/components/header/header.component.ts", lineNumber: 8 });
+})();
+(() => {
+  const id = "src%2Fapp%2Fcomponents%2Fheader%2Fheader.component.ts%40HeaderComponent";
+  function HeaderComponent_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(new URL("./@ng/component?c=" + id + "&t=" + encodeURIComponent(t), import.meta.url).href, 'import')
+    ).then((m) => m.default && i03.\u0275\u0275replaceMetadata(HeaderComponent, m.default, [i03], [Component2], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && HeaderComponent_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && HeaderComponent_HmrLoad(d.timestamp)));
+})();
+
+// src/app/components/footer/footer.component.ts
+import { Component as Component3 } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+import { CommonModule as CommonModule2 } from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_common.js?v=5b4555af";
+import * as i04 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+import * as i12 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_common.js?v=5b4555af";
+var FooterComponent = class _FooterComponent {
+  currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+  static \u0275fac = function FooterComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _FooterComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i04.\u0275\u0275defineComponent({ type: _FooterComponent, selectors: [["app-footer"]], decls: 17, vars: 1, consts: [[1, "container"], [1, "row"], [1, "col-md-8", "mx-auto", "text-center"], [1, "d-flex", "flex-wrap", "justify-content-center", "mb-4"], ["href", "#", 1, "mx-2", "mb-2"], [1, "copyright"]], template: function FooterComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i04.\u0275\u0275elementStart(0, "footer")(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3)(5, "a", 4);
+      i04.\u0275\u0275text(6, "Home");
+      i04.\u0275\u0275elementEnd();
+      i04.\u0275\u0275elementStart(7, "a", 4);
+      i04.\u0275\u0275text(8, "About Us");
+      i04.\u0275\u0275elementEnd();
+      i04.\u0275\u0275elementStart(9, "a", 4);
+      i04.\u0275\u0275text(10, "Services");
+      i04.\u0275\u0275elementEnd();
+      i04.\u0275\u0275elementStart(11, "a", 4);
+      i04.\u0275\u0275text(12, "Contact Us");
+      i04.\u0275\u0275elementEnd();
+      i04.\u0275\u0275elementStart(13, "a", 4);
+      i04.\u0275\u0275text(14, "Privacy Policy");
+      i04.\u0275\u0275elementEnd()();
+      i04.\u0275\u0275elementStart(15, "div", 5);
+      i04.\u0275\u0275text(16);
+      i04.\u0275\u0275elementEnd()()()()();
+    }
+    if (rf & 2) {
+      i04.\u0275\u0275advance(16);
+      i04.\u0275\u0275textInterpolate1(" Copyright \xA9 ", ctx.currentYear, " Smart Device Setup. All Rights Reserved. ");
+    }
+  }, dependencies: [CommonModule2, i12.NgClass, i12.NgComponentOutlet, i12.NgForOf, i12.NgIf, i12.NgTemplateOutlet, i12.NgStyle, i12.NgSwitch, i12.NgSwitchCase, i12.NgSwitchDefault, i12.NgPlural, i12.NgPluralCase, i12.AsyncPipe, i12.UpperCasePipe, i12.LowerCasePipe, i12.JsonPipe, i12.SlicePipe, i12.DecimalPipe, i12.PercentPipe, i12.TitleCasePipe, i12.CurrencyPipe, i12.DatePipe, i12.I18nPluralPipe, i12.I18nSelectPipe, i12.KeyValuePipe], styles: ['\n\nfooter[_ngcontent-%COMP%] {\n  background-color: var(--night-blue);\n  background-image: var(--line --night-blue);\n  color: white;\n  padding: 3rem 0;\n  position: relative;\n}\nfooter[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 4px;\n  background:\n    linear-gradient(\n      90deg,\n      #3a7bd5,\n      #00d2ff);\n}\nfooter[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: white !important;\n  transition: all 0.3s ease;\n  padding: 0.5rem 1rem;\n  border-radius: 4px;\n}\nfooter[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n  text-decoration: none;\n}\n.copyright[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 0.9rem;\n}\n/*# sourceMappingURL=footer.component.css.map */'] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i04.\u0275setClassMetadata(FooterComponent, [{
+    type: Component3,
+    args: [{ selector: "app-footer", standalone: true, imports: [CommonModule2], template: '<footer>\r\n    <div class="container">\r\n      <div class="row">\r\n        <div class="col-md-8 mx-auto text-center">\r\n          <div class="d-flex flex-wrap justify-content-center mb-4">\r\n            <a class="mx-2 mb-2" href="#">Home</a>\r\n            <a class="mx-2 mb-2" href="#">About Us</a>\r\n            <a class="mx-2 mb-2" href="#">Services</a>\r\n            <a class="mx-2 mb-2" href="#">Contact Us</a>\r\n            <a class="mx-2 mb-2" href="#">Privacy Policy</a>\r\n          </div>\r\n          <div class="copyright">\r\n            Copyright \xA9 {{ currentYear }} Smart Device Setup. All Rights Reserved.\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </footer>', styles: ['/* src/app/components/footer/footer.component.css */\nfooter {\n  background-color: var(--night-blue);\n  background-image: var(--line --night-blue);\n  color: white;\n  padding: 3rem 0;\n  position: relative;\n}\nfooter::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 4px;\n  background:\n    linear-gradient(\n      90deg,\n      #3a7bd5,\n      #00d2ff);\n}\nfooter a {\n  color: white !important;\n  transition: all 0.3s ease;\n  padding: 0.5rem 1rem;\n  border-radius: 4px;\n}\nfooter a:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n  text-decoration: none;\n}\n.copyright {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 0.9rem;\n}\n/*# sourceMappingURL=footer.component.css.map */\n'] }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i04.\u0275setClassDebugInfo(FooterComponent, { className: "FooterComponent", filePath: "src/app/components/footer/footer.component.ts", lineNumber: 12 });
+})();
+(() => {
+  const id = "src%2Fapp%2Fcomponents%2Ffooter%2Ffooter.component.ts%40FooterComponent";
+  function FooterComponent_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(new URL("./@ng/component?c=" + id + "&t=" + encodeURIComponent(t), import.meta.url).href, 'import')
+    ).then((m) => m.default && i04.\u0275\u0275replaceMetadata(FooterComponent, m.default, [i04, i12], [CommonModule2, Component3], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && FooterComponent_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && FooterComponent_HmrLoad(d.timestamp)));
+})();
+
+// src/app/app.component.ts
+import * as i05 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_core.js?v=5b4555af";
+import * as i13 from "/@fs/F:/new  2025/digisol/FE/digiprint-ui/.angular/cache/19.2.8/digiprint-ui/vite/deps/@angular_common.js?v=5b4555af";
+var AppComponent = class _AppComponent {
+  title = "digiprint-ui";
+  static \u0275fac = function AppComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _AppComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i05.\u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], decls: 4, vars: 0, consts: [[1, "flex-grow-1"]], template: function AppComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i05.\u0275\u0275element(0, "app-header");
+      i05.\u0275\u0275elementStart(1, "main", 0);
+      i05.\u0275\u0275element(2, "router-outlet");
+      i05.\u0275\u0275elementEnd();
+      i05.\u0275\u0275element(3, "app-footer");
+    }
+  }, dependencies: [CommonModule3, i13.NgClass, i13.NgComponentOutlet, i13.NgForOf, i13.NgIf, i13.NgTemplateOutlet, i13.NgStyle, i13.NgSwitch, i13.NgSwitchCase, i13.NgSwitchDefault, i13.NgPlural, i13.NgPluralCase, i13.AsyncPipe, i13.UpperCasePipe, i13.LowerCasePipe, i13.JsonPipe, i13.SlicePipe, i13.DecimalPipe, i13.PercentPipe, i13.TitleCasePipe, i13.CurrencyPipe, i13.DatePipe, i13.I18nPluralPipe, i13.I18nSelectPipe, i13.KeyValuePipe, RouterOutlet, HeaderComponent, FooterComponent], styles: ["\n\nhtml[_ngcontent-%COMP%], \nbody[_ngcontent-%COMP%] {\n  height: 100%;\n}\nbody[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n/*# sourceMappingURL=app.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i05.\u0275setClassMetadata(AppComponent, [{
+    type: Component4,
+    args: [{ selector: "app-root", imports: [CommonModule3, RouterOutlet, HeaderComponent, FooterComponent], template: '<app-header></app-header>\r\n<main class="flex-grow-1">\r\n  <router-outlet></router-outlet>\r\n</main>\r\n<app-footer></app-footer>', styles: ["/* src/app/app.component.css */\nhtml,\nbody {\n  height: 100%;\n}\nbody {\n  display: flex;\n  flex-direction: column;\n}\n/*# sourceMappingURL=app.component.css.map */\n"] }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i05.\u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 12 });
+})();
+(() => {
+  const id = "src%2Fapp%2Fapp.component.ts%40AppComponent";
+  function AppComponent_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(new URL("./@ng/component?c=" + id + "&t=" + encodeURIComponent(t), import.meta.url).href, 'import')
+    ).then((m) => m.default && i05.\u0275\u0275replaceMetadata(AppComponent, m.default, [i05, i13], [CommonModule3, RouterOutlet, HeaderComponent, FooterComponent, Component4], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && AppComponent_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && AppComponent_HmrLoad(d.timestamp)));
+})();
+
+// src/main.ts
+bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err));
+
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9tYWluLnRzIiwic3JjL2FwcC9hcHAuY29uZmlnLnRzIiwic3JjL2FwcC9zZXJ2aWNlcy9zZXJ2aWNlcy5jb21wb25lbnQudHMiLCJzcmMvYXBwL3NlcnZpY2VzL3NlcnZpY2VzLmNvbXBvbmVudC5odG1sIiwic3JjL2FwcC9zZXJ2aWNlL2FwaS5zZXJ2aWNlLnRzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnRzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50Lmh0bWwiLCJzcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQudHMiLCJzcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuaHRtbCIsInNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC50cyIsInNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIG1haW4udHNcclxuaW1wb3J0IHsgYm9vdHN0cmFwQXBwbGljYXRpb24gfSBmcm9tICdAYW5ndWxhci9wbGF0Zm9ybS1icm93c2VyJztcclxuaW1wb3J0IHsgYXBwQ29uZmlnIH0gZnJvbSAnLi9hcHAvYXBwLmNvbmZpZyc7XHJcbmltcG9ydCB7IEFwcENvbXBvbmVudCB9IGZyb20gJy4vYXBwL2FwcC5jb21wb25lbnQnO1xyXG5cclxuYm9vdHN0cmFwQXBwbGljYXRpb24oQXBwQ29tcG9uZW50LCBhcHBDb25maWcpXHJcbiAgLmNhdGNoKGVyciA9PiBjb25zb2xlLmVycm9yKGVycikpOyIsImltcG9ydCB7IHByb3ZpZGVSb3V0ZXIsIFJvdXRlcyB9IGZyb20gJ0Bhbmd1bGFyL3JvdXRlcic7XHJcbmltcG9ydCB7IGltcG9ydFByb3ZpZGVyc0Zyb20gfSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuaW1wb3J0IHsgcHJvdmlkZUh0dHBDbGllbnQgfSBmcm9tICdAYW5ndWxhci9jb21tb24vaHR0cCc7XHJcbmltcG9ydCB7IFNlcnZpY2VzQ29tcG9uZW50IH0gZnJvbSAnLi9zZXJ2aWNlcy9zZXJ2aWNlcy5jb21wb25lbnQnO1xyXG5cclxuY29uc3Qgcm91dGVzOiBSb3V0ZXMgPSBbXHJcbiAgeyBwYXRoOiAnJywgcmVkaXJlY3RUbzogJ3NlcnZpY2VzJywgcGF0aE1hdGNoOiAnZnVsbCcgfSxcclxuICB7IHBhdGg6ICdzZXJ2aWNlcycsIGNvbXBvbmVudDogU2VydmljZXNDb21wb25lbnQgfSxcclxuXTtcclxuXHJcbmV4cG9ydCBjb25zdCBhcHBDb25maWcgPSB7XHJcbiAgcHJvdmlkZXJzOiBbXHJcbiAgICBwcm92aWRlSHR0cENsaWVudCgpLFxyXG4gICAgcHJvdmlkZVJvdXRlcihyb3V0ZXMpXHJcbiAgXVxyXG59O1xyXG4iLCJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5pbXBvcnQgeyBDb21tb25Nb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb21tb24nO1xyXG5pbXBvcnQgeyBBcGlTZXJ2aWNlIH0gZnJvbSAnLi4vc2VydmljZS9hcGkuc2VydmljZSc7XHJcbmltcG9ydCB7IFNlcnZpY2UgfSBmcm9tICcuLi9tb2RlbC9zZXJ2aWNlLm1vZGVsJztcclxuaW1wb3J0IHsgRm9vdGVyQ29tcG9uZW50IH0gZnJvbSAnLi4vY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudCc7XHJcblxyXG5cclxuQENvbXBvbmVudCh7XHJcbiAgc2VsZWN0b3I6ICdhcHAtc2VydmljZXMnLFxyXG4gIHN0YW5kYWxvbmU6IHRydWUsXHJcbiAgaW1wb3J0czogW0NvbW1vbk1vZHVsZSAgXSxcclxuICB0ZW1wbGF0ZVVybDogJy4vc2VydmljZXMuY29tcG9uZW50Lmh0bWwnLFxyXG4gIHN0eWxlVXJsczogWycuL3NlcnZpY2VzLmNvbXBvbmVudC5jc3MnXVxyXG59KVxyXG5leHBvcnQgY2xhc3MgU2VydmljZXNDb21wb25lbnQgaW1wbGVtZW50cyBPbkluaXQge1xyXG4gIHNlcnZpY2VzOiBTZXJ2aWNlW10gPSBbXHJcbiAgICB7XHJcbiAgICAgIGlkOiAxLFxyXG4gICAgICB0aXRsZTogJ0Vhc3kgUHJpbnRpbmcgU2V0dXAnLFxyXG4gICAgICBkZXNjcmlwdGlvbjogJ1NldCB1cCB5b3VyIHByaW50ZXIgaW4ganVzdCBhIGZldyBlYXN5IHN0ZXBzLiAxMjMgQ29tIFNldHVwJyxcclxuICAgICAgY2F0ZWdvcnk6ICdzZXR1cCdcclxuICAgIH0sXHJcbiAgICB7XHJcbiAgICAgIGlkOiAyLFxyXG4gICAgICB0aXRsZTogJ1NtYXJ0IFByaW50aW5nIFNldHVwJyxcclxuICAgICAgZGVzY3JpcHRpb246ICdTZXQgdXAgeW91ciBwcmludGVyIGluIGp1c3QgYSBmZXcgc2ltcGxlIHN0ZXBzLiAxMjMgQ29tIFNldFVwJyxcclxuICAgICAgY2F0ZWdvcnk6ICdzZXR1cCdcclxuICAgIH0sXHJcbiAgICB7XHJcbiAgICAgIGlkOiAzLFxyXG4gICAgICB0aXRsZTogJ0lubm92YXRpdmUgc29sdXRpb25zJyxcclxuICAgICAgZGVzY3JpcHRpb246ICdXZSBwcm92aWRlIG1hbmFnZWQgcHJpbnRpbmcgc2VydmljZXMgdG8gZW5oYW5jZSB5b3VyIGVxdWlwbWVudCBwcm9kdWN0aXZpdHkuLi4nLFxyXG4gICAgICBjYXRlZ29yeTogJ3NvbHV0aW9ucydcclxuICAgIH1cclxuICBdO1xyXG5cclxuICBjb25zdHJ1Y3Rvcihwcml2YXRlIGFwaTogQXBpU2VydmljZSkge31cclxuXHJcbiAgbmdPbkluaXQoKTogdm9pZCB7XHJcbiAgICAvLyBJZiB5b3Ugd2FudCB0byBrZWVwIHRoZSBBUEkgY2FsbCBmb3Igb3RoZXIgc2VydmljZXNcclxuICAgIHRoaXMuYXBpLmdldEFsbFNlcnZpY2VzKCkuc3Vic2NyaWJlKGRhdGEgPT4ge1xyXG4gICAgICAvLyBZb3UgY291bGQgbWVyZ2UgdGhlIHN0YXRpYyBjb250ZW50IHdpdGggQVBJIGRhdGEgaGVyZSBpZiBuZWVkZWRcclxuICAgIH0pO1xyXG4gIH1cclxufSIsIjxkaXYgY2xhc3M9XCJjb250YWluZXItZmx1aWQgcHgtMFwiPlxyXG4gIFxyXG4gIDxkaXYgY2xhc3M9XCJweS01XCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOiAjMjc2NGE2O1wiPlxyXG4gICAgPGRpdiBjbGFzcz1cImNvbnRhaW5lclwiPlxyXG4gICAgICA8aDEgY2xhc3M9XCJ0ZXh0LWNlbnRlciBtYi00IHRleHQtd2hpdGVcIiBzdHlsZT1cImNvbG9yOiAjMzMzO1wiPkdldHRpbmcgU3RhcnRlZCBXaXRoIFByaW50aW5nPC9oMT5cclxuICAgICAgPHAgY2xhc3M9XCJ0ZXh0LWNlbnRlciBtYi01IGZzLTVcIiBzdHlsZT1cImNvbG9yOiAjZjlmOWY5O1wiPlxyXG4gICAgICAgIENob29zZSB5b3VyIG9wZXJhdGluZyBzeXN0ZW0gZnJvbSB0aGUgb3B0aW9ucyBiZWxvdyB0byBiZWdpbiB0aGUgY29ycmVjdCBwcmludGVyIGRyaXZlciBpbnN0YWxsYXRpb24gZm9yIHlvdXIgZGV2aWNlLlxyXG4gICAgICA8L3A+XHJcbiAgICA8L2Rpdj5cclxuICA8L2Rpdj5cclxuXHJcbiAgPGRpdiBjbGFzcz1cImNvbnRhaW5lciBteS01XCI+XHJcbiAgICA8ZGl2IGNsYXNzPVwicm93IGFsaWduLWl0ZW1zLWNlbnRlclwiPlxyXG4gICAgICA8ZGl2IGNsYXNzPVwiY29sLW1kLTZcIj5cclxuXHJcbiAgICAgICAgPGltZyBzcmM9XCJhc3NldHMvaW1hZ2VzL3ByaW50ZXIwMi5qcGcucG5nXCIgYWx0PVwiUHJpbnRlciBTZXR1cFwiIFxyXG4gICAgICAgICAgICAgY2xhc3M9XCJpbWctZmx1aWQgcm91bmRlZCBzaGFkb3dcIj5cclxuICAgICAgPC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3M9XCJjb2wtbWQtNiBiZy13aGl0ZSBwLTQgcm91bmRlZFwiPlxyXG4gICAgICAgIDxoMiBjbGFzcz1cIm1iLTNcIj5FYXN5IFByaW50aW5nIFNldHVwPC9oMj5cclxuICAgICAgICA8cCBjbGFzcz1cImxlYWQgdGV4dC1kYXJrIG1iLTBcIj5TZXQgdXAgeW91ciBwcmludGVyIGluIGp1c3QgYSBmZXcgZWFzeSBzdGVwcy48L3A+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgPC9kaXY+XHJcbiAgPC9kaXY+XHJcblxyXG4gIDxkaXYgY2xhc3M9XCJiZy1kYXJrIHRleHQtd2hpdGUgcHktNVwiPlxyXG4gICAgPGRpdiBjbGFzcz1cImNvbnRhaW5lclwiPlxyXG4gICAgICA8ZGl2IGNsYXNzPVwicm93IGp1c3RpZnktY29udGVudC1jZW50ZXJcIj5cclxuICAgICAgICA8ZGl2IGNsYXNzPVwiY29sLWxnLTIyXCI+XHJcbiAgICAgICAgICA8cCBjbGFzcz1cIm1iLTAgZnMtNVwiPlxyXG4gICAgICAgICAgICBTd2l0Y2hpbmcgdG8gYSBjbG91ZC1iYXNlZCBwcmludCBzZXJ2ZXIgY2FuIGhlbHAgcmVzb2x2ZSBjb21tb24gcHJpbnRpbmcgaXNzdWVzLCBzdWNoIGFzIGVuYWJsaW5nIG1vYmlsZSBwcmludGluZywgaW1wcm92aW5nIGF1dGhlbnRpY2F0aW9uIGFuZCBpZGVudGl0eVxyXG4gICAgICAgICAgICAgbWFuYWdlbWVudCxhbmQgcmVkdWNpbmcgZGVwZW5kZW5jeSBvbiB0cmFkaXRpb25hbCBzZXR1cHMuIEl0IGVuc3VyZXMgYWNjZXNzIHRvIHRoZSBsYXRlc3QgbXVsdGlmdW5jdGlvbiBwcmludGVycyB3aXRoIGN1dHRpbmctZWRnZSB0ZWNobm9sb2d5LCB0YWlsb3JlZCBcclxuICAgICAgICAgICAgIHRvIHlvdXIgYnVzaW5lc3MgbmVlZHMuIFRoZXNlIHByaW50ZXJzICAgb3B0aW1pemUgcHJpbnRpbmcgdGltZSwgc2F2ZSBzcGFjZSwgYW5kIGVuaGFuY2UgY29zdCBlZmZpY2llbmN5LlxyXG4gICAgICAgICAgPC9wPlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgIDwvZGl2PlxyXG4gIDwvZGl2PlxyXG5cclxuICA8ZGl2IGNsYXNzPVwiY29udGFpbmVyIG15LTVcIj5cclxuICAgIDxkaXYgY2xhc3M9XCJyb3cgYWxpZ24taXRlbXMtY2VudGVyXCI+XHJcbiAgICAgIDwhLS0gVGV4dCBMZWZ0IC0tPlxyXG4gICAgICA8ZGl2IGNsYXNzPVwiY29sLW1kLTYgYmctd2hpdGUgcC00IHJvdW5kZWRcIj5cclxuICAgICAgICBcclxuICAgICAgICA8cCBjbGFzcz1cImxlYWQgdGV4dC1kYXJrIG1iLTBcIj5TZXQgdXAgeW91ciBwcmludGVyIGluIGp1c3QgYSBmZXcgc2ltcGxlIHN0ZXBzLiAxMjMgQ29tIFNldFVwPC9wPlxyXG4gICAgICA8L2Rpdj5cclxuICAgICAgPCEtLSBJbWFnZSBSaWdodCAtLT5cclxuICAgICAgPGRpdiBjbGFzcz1cImNvbC1tZC02XCI+XHJcbiAgICAgICAgPGltZyBzcmM9XCJhc3NldHMvaW1hZ2VzL3ByaW50ZXIwMi5qcGcucG5nXCIgYWx0PVwiU21hcnQgUHJpbnRlciBTZXR1cFwiIFxyXG4gICAgICAgICAgICAgY2xhc3M9XCJpbWctZmx1aWQgcm91bmRlZCBzaGFkb3dcIj5cclxuICAgICAgPC9kaXY+XHJcbiAgICA8L2Rpdj5cclxuICA8L2Rpdj5cclxuXHJcbiAgPGRpdiBjbGFzcz1cInB5LTVcIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6ICMyNzY0YTY7XCI+XHJcbiAgICA8ZGl2IGNsYXNzPVwiY29udGFpbmVyXCI+XHJcbiAgICAgIDxkaXYgY2xhc3M9XCJyb3cganVzdGlmeS1jb250ZW50LWNlbnRlclwiPlxyXG4gICAgICAgIDxkaXYgY2xhc3M9XCJjb2wtbGctMTRcIj5cclxuICAgICAgICAgIDxoMiBjbGFzcz1cIm1iLTQgdGV4dC13aGl0ZVwiPkludHJvZHVjaW5nIGlubm92YXRpdmUgc29sdXRpb25zIGZvciB5b3VyIGhvbWUgcHJpbnRpbmcgbmVlZHMuPC9oMj5cclxuICAgICAgICAgIDxkaXYgY2xhc3M9XCJ0ZXh0LXdoaXRlXCI+XHJcbiAgICAgICAgICAgIDxwIGNsYXNzPVwibWItM1wiPlxyXG4gICAgICAgICAgICAgIFdlIHByb3ZpZGUgbWFuYWdlZCBwcmludGluZyBzZXJ2aWNlcyB0byBlbmhhbmNlIHlvdXIgZXF1aXBtZW50J3MgcHJvZHVjdGl2aXR5IHdoaWxlIHJlZHVjaW5nIHByaW50aW5nIGNvc3RzLiBcclxuICAgICAgICAgICAgICBPdXIgc2VydmljZXMgZ28gYmV5b25kIGp1c3QgcmVudGluZyBvciBsZWFzaW5nIHByaW50ZXJzLCBvZmZlcmluZyBjb21wcmVoZW5zaXZlIHNvbHV0aW9ucyB0aGF0IGV4dGVuZCBiZXlvbmQgXHJcbiAgICAgICAgICAgICAgcGF5LXBlci11c2Ugb3IgY29zdC1wZXItY29weSBtb2RlbHMuXHJcbiAgICAgICAgICAgIDwvcD5cclxuICAgICAgICAgICAgPHAgY2xhc3M9XCJtYi0wXCI+XHJcbiAgICAgICAgICAgICAgT3VyIHZhbHVlIHByb3Bvc2l0aW9uIGluY2x1ZGVzIGEgcmVhbC10aW1lIG1vbml0b3Jpbmcgc2VydmljZSB0aGF0IGVuYWJsZXMgdXMgdG8gY29uZHVjdCBwcmludGluZyBhdWRpdHMsIFxyXG4gICAgICAgICAgICAgIHNpZ25pZmljYW50bHkgcmVkdWNpbmcgeW91ciBwcmludGluZyBjb3N0cy4gTWFueSBjb21wYW5pZXMgYXJlIHVuYXdhcmUgb2YgdGhlaXIgYW5udWFsIHByaW50aW5nIGV4cGVuc2VzLCBcclxuICAgICAgICAgICAgICBpbmNsdWRpbmcgbWFjaGluZSBhbW9ydGl6YXRpb24sIHRvbmVyLCBhbmQgcGFwZXIgY29zdHMuIE1hbmFnaW5nIHRoZXNlIGV4cGVuc2VzIGludGVybmFsbHkgY2FuIGJlIGluZWZmaWNpZW50IFxyXG4gICAgICAgICAgICAgIGR1ZSB0byBsaW1pdGVkIHJlc291cmNlcyBvciBleHBlcnRpc2UuXHJcbiAgICAgICAgICAgIDwvcD5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgIDwvZGl2PlxyXG4gIDwvZGl2PlxyXG48L2Rpdj4iLCJpbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcbmltcG9ydCB7IEh0dHBDbGllbnQgfSBmcm9tICdAYW5ndWxhci9jb21tb24vaHR0cCc7XHJcbmltcG9ydCB7IFNlcnZpY2UgfSBmcm9tICcuLi9tb2RlbC9zZXJ2aWNlLm1vZGVsJztcclxuaW1wb3J0IHsgT2JzZXJ2YWJsZSB9IGZyb20gJ3J4anMnO1xyXG5cclxuQEluamVjdGFibGUoe1xyXG4gIHByb3ZpZGVkSW46ICdyb290J1xyXG59KVxyXG5leHBvcnQgY2xhc3MgQXBpU2VydmljZSB7XHJcbiAgcHJpdmF0ZSBiYXNlVXJsID0gJ2h0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hcGkvc2VydmljZXMnO1xyXG5cclxuICBjb25zdHJ1Y3Rvcihwcml2YXRlIGh0dHA6IEh0dHBDbGllbnQpIHt9XHJcblxyXG4gIGdldEFsbFNlcnZpY2VzKCk6IE9ic2VydmFibGU8U2VydmljZVtdPiB7XHJcbiAgICByZXR1cm4gdGhpcy5odHRwLmdldDxTZXJ2aWNlW10+KHRoaXMuYmFzZVVybCk7XHJcbiAgfVxyXG5cclxuICBjcmVhdGVTZXJ2aWNlKHNlcnZpY2U6IFNlcnZpY2UpOiBPYnNlcnZhYmxlPFNlcnZpY2U+IHtcclxuICAgIHJldHVybiB0aGlzLmh0dHAucG9zdDxTZXJ2aWNlPih0aGlzLmJhc2VVcmwsIHNlcnZpY2UpO1xyXG4gIH1cclxufVxyXG4iLCJpbXBvcnQgeyBDb21wb25lbnQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuaW1wb3J0IHsgQ29tbW9uTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uJztcclxuaW1wb3J0IHsgUm91dGVyT3V0bGV0IH0gZnJvbSAnQGFuZ3VsYXIvcm91dGVyJztcclxuaW1wb3J0IHsgSGVhZGVyQ29tcG9uZW50IH0gZnJvbSAnLi9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50JztcclxuaW1wb3J0IHsgRm9vdGVyQ29tcG9uZW50IH0gZnJvbSAnLi9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50JztcclxuQENvbXBvbmVudCh7XHJcbiAgc2VsZWN0b3I6ICdhcHAtcm9vdCcsXHJcbiAgaW1wb3J0czogW0NvbW1vbk1vZHVsZSxSb3V0ZXJPdXRsZXQsSGVhZGVyQ29tcG9uZW50LEZvb3RlckNvbXBvbmVudCBdLFxyXG4gIHRlbXBsYXRlVXJsOiAnLi9hcHAuY29tcG9uZW50Lmh0bWwnLFxyXG4gIHN0eWxlVXJsOiAnLi9hcHAuY29tcG9uZW50LmNzcydcclxufSlcclxuZXhwb3J0IGNsYXNzIEFwcENvbXBvbmVudCB7XHJcbiAgdGl0bGUgPSAnZGlnaXByaW50LXVpJztcclxufVxyXG4iLCI8YXBwLWhlYWRlcj48L2FwcC1oZWFkZXI+XHJcbjxtYWluIGNsYXNzPVwiZmxleC1ncm93LTFcIj5cclxuICA8cm91dGVyLW91dGxldD48L3JvdXRlci1vdXRsZXQ+XHJcbjwvbWFpbj5cclxuPGFwcC1mb290ZXI+PC9hcHAtZm9vdGVyPiIsImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5cclxuQENvbXBvbmVudCh7XHJcbiAgc2VsZWN0b3I6ICdhcHAtaGVhZGVyJyxcclxuICB0ZW1wbGF0ZVVybDogJy4vaGVhZGVyLmNvbXBvbmVudC5odG1sJyxcclxuICBzdHlsZVVybHM6IFsnLi9oZWFkZXIuY29tcG9uZW50LmNzcyddXHJcbn0pXHJcbmV4cG9ydCBjbGFzcyBIZWFkZXJDb21wb25lbnQge1xyXG4gIHByaW50ZXJCcmFuZHMgPSBbXHJcbiAgICAnSW5rSmV0JyxcclxuICAgICdMYXNlckpldCcsXHJcbiAgICAnT2ZmaWNlSmV0JyxcclxuICAgICdQaXhtYScsXHJcbiAgICAnTWF4aWZ5JyxcclxuICAgICdYUCcsXHJcbiAgICAnRWNvVGFuaycsXHJcbiAgICAnV29ya0ZvcmNlJ1xyXG4gIF07XHJcbn0iLCI8bmF2IGNsYXNzPVwibmF2YmFyIG5hdmJhci1leHBhbmQtbGcgbmF2YmFyLWxpZ2h0IGJnLWxpZ2h0IGJvcmRlci1ib3R0b21cIj5cclxuICAgIDxkaXYgY2xhc3M9XCJjb250YWluZXJcIj5cclxuICAgICAgPGRpdiBjbGFzcz1cImQtZmxleCBmbGV4LXdyYXAgdy0xMDAganVzdGlmeS1jb250ZW50LWNlbnRlclwiPlxyXG4gICAgICAgIDx1bCAgY2xhc3M9XCJuYXZcIj5cclxuICAgICAgICAgICAgQGZvciAoYnJhbmQgb2YgcHJpbnRlckJyYW5kczsgdHJhY2sgYnJhbmQpIHtcclxuICAgICAgICAgICAgICA8bGkgY2xhc3M9XCJuYXYtaXRlbVwiPlxyXG4gICAgICAgICAgICAgICAgICA8YSBjbGFzcz1cIm5hdi1saW5rIHRleHQtZGFya1wiIGhyZWY9XCIjXCI+e3sgYnJhbmQgfX08L2E+XHJcbiAgICAgICAgICAgICAgPC9saT5cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgPC91bD5cclxuICAgICAgPC9kaXY+XHJcbiAgICA8L2Rpdj5cclxuICA8L25hdj4iLCIvLyBmb290ZXIuY29tcG9uZW50LnRzXHJcbmltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5pbXBvcnQgeyBDb21tb25Nb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb21tb24nOyAvLyBBZGQgdGhpcyBpbXBvcnRcclxuXHJcbkBDb21wb25lbnQoe1xyXG4gIHNlbGVjdG9yOiAnYXBwLWZvb3RlcicsXHJcbiAgc3RhbmRhbG9uZTogdHJ1ZSxcclxuICBpbXBvcnRzOiBbQ29tbW9uTW9kdWxlXSwgLy8gTm93IHByb3Blcmx5IGltcG9ydGVkXHJcbiAgdGVtcGxhdGVVcmw6ICcuL2Zvb3Rlci5jb21wb25lbnQuaHRtbCcsXHJcbiAgc3R5bGVVcmxzOiBbJy4vZm9vdGVyLmNvbXBvbmVudC5jc3MnXVxyXG59KVxyXG5leHBvcnQgY2xhc3MgRm9vdGVyQ29tcG9uZW50IHtcclxuICBjdXJyZW50WWVhciA9IG5ldyBEYXRlKCkuZ2V0RnVsbFllYXIoKTtcclxufSIsIjxmb290ZXI+XHJcbiAgICA8ZGl2IGNsYXNzPVwiY29udGFpbmVyXCI+XHJcbiAgICAgIDxkaXYgY2xhc3M9XCJyb3dcIj5cclxuICAgICAgICA8ZGl2IGNsYXNzPVwiY29sLW1kLTggbXgtYXV0byB0ZXh0LWNlbnRlclwiPlxyXG4gICAgICAgICAgPGRpdiBjbGFzcz1cImQtZmxleCBmbGV4LXdyYXAganVzdGlmeS1jb250ZW50LWNlbnRlciBtYi00XCI+XHJcbiAgICAgICAgICAgIDxhIGNsYXNzPVwibXgtMiBtYi0yXCIgaHJlZj1cIiNcIj5Ib21lPC9hPlxyXG4gICAgICAgICAgICA8YSBjbGFzcz1cIm14LTIgbWItMlwiIGhyZWY9XCIjXCI+QWJvdXQgVXM8L2E+XHJcbiAgICAgICAgICAgIDxhIGNsYXNzPVwibXgtMiBtYi0yXCIgaHJlZj1cIiNcIj5TZXJ2aWNlczwvYT5cclxuICAgICAgICAgICAgPGEgY2xhc3M9XCJteC0yIG1iLTJcIiBocmVmPVwiI1wiPkNvbnRhY3QgVXM8L2E+XHJcbiAgICAgICAgICAgIDxhIGNsYXNzPVwibXgtMiBtYi0yXCIgaHJlZj1cIiNcIj5Qcml2YWN5IFBvbGljeTwvYT5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgPGRpdiBjbGFzcz1cImNvcHlyaWdodFwiPlxyXG4gICAgICAgICAgICBDb3B5cmlnaHQgwqkge3sgY3VycmVudFllYXIgfX0gU21hcnQgRGV2aWNlIFNldHVwLiBBbGwgUmlnaHRzIFJlc2VydmVkLlxyXG4gICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPC9kaXY+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgPC9kaXY+XHJcbiAgPC9mb290ZXI+Il0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQ0EsU0FBUyw0QkFBNEI7OztBQ0RyQyxTQUFTLHFCQUE2QjtBQUV0QyxTQUFTLHlCQUF5Qjs7O0FDRmxDLFNBQVMsaUJBQXlCO0FBQ2xDLFNBQVMsb0JBQW9COzs7O0FFRDdCOzs7O1NBQVMsa0JBQWtCOzs7QUFRckIsSUFBTyxhQUFQLE1BQU8sWUFBVTtFQUdEO0VB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QUEsZUFBQSxlQUFBLFlBQUEsT0FBQSxZQUFBLElBQUEsR0FBQSw0QkFBQSxPQUFBLEVBQUEsT0FBQSxNQUFBLHdCQUFBLEVBQUEsU0FBQSxDQUFBO0FBQUEsR0FBQTs7Ozs7QUpBdEIsSUFBTyxlQUFQLE1BQU8sY0FBWTtFQUN2QixRQUFROztxQ0FERyxlQUFZO0VBQUE7NkVBQVosZUFBWSxXQUFBLENBQUEsQ0FBQSxVQUFBLENBQUEsR0FBQSxPQUFBLEdBQUEsTUFBQSxHQUFBLFFBQUEsQ0FBQSxDQUFBLEdBQUEsYUFBQSxDQUFBLEdBQUEsVUFBQSxTQUFBLHNCQUFBLElBQUEsS0FBQTtBQUFBLFFBQUEsS0FBQSxHQUFBO0FDWHpCLE1BQUEsd0JBQUEsR0FBQSxZQUFBO0FBQ0EsTUFBQSw2QkFBQSxHQUFBLFFBQUEsQ0FBQTtBQUNFLE1BQUEsd0JBQUEsR0FBQSxlQUFBO0FBQ0YsTUFBQSwyQkFBQTtBQUNBLE1BQUEsd0JBQUEsR0FBQSxZQUFBOztvQkRHWUksZUFBWSxhQUFBLHVCQUFBLGFBQUEsVUFBQSxzQkFBQSxhQUFBLGNBQUEsa0JBQUEscUJBQUEsY0FBQSxrQkFBQSxlQUFBLG1CQUFBLG1CQUFBLGNBQUEsZUFBQSxpQkFBQSxpQkFBQSxtQkFBQSxrQkFBQSxjQUFBLG9CQUFBLG9CQUFBLGtCQUFDLGNBQWEsaUJBQWdCLGVBQWUsR0FBQSxRQUFBLENBQUEsd01BQUEsRUFBQSxDQUFBOzs7Z0ZBSXhELGNBQVksQ0FBQTtVQU54QkM7dUJBQ1csWUFBVSxTQUNYLENBQUNELGVBQWEsY0FBYSxpQkFBZ0IsZUFBZSxHQUFFLFVBQUEsd0lBQUEsUUFBQSxDQUFBLDZLQUFBLEVBQUEsQ0FBQTs7OztpRkFJMUQsY0FBWSxFQUFBLFdBQUEsZ0JBQUEsVUFBQSw0QkFBQSxZQUFBLEdBQUEsQ0FBQTtBQUFBLEdBQUE7Ozs7Ozs7K0RBQVosY0FBWSxFQUFBLFNBQUEsQ0FBQUUsS0FBQUMsR0FBQSxHQUFBLENBQUFILGVBQUEsY0FBQSxpQkFBQSxpQkFBQUMsVUFBQSxHQUFBLGFBQUEsRUFBQSxDQUFBO0VBQUE7QUFBQSxHQUFBLE9BQUEsY0FBQSxlQUFBLGNBQUEscUJBQUEsS0FBQSxJQUFBLENBQUE7QUFBQSxHQUFBLE9BQUEsY0FBQSxlQUFBLGVBQUEsWUFBQSxPQUFBLFlBQUEsSUFBQSxHQUFBLDRCQUFBLE9BQUEsRUFBQSxPQUFBLE1BQUEscUJBQUEsRUFBQSxTQUFBLENBQUE7QUFBQSxHQUFBOzs7QUxOekIscUJBQXFCLGNBQWMsU0FBUyxFQUN6QyxNQUFNLFNBQU8sUUFBUSxNQUFNLEdBQUcsQ0FBQzsiLCJuYW1lcyI6WyJpMCIsIkNvbXBvbmVudCIsIkNvbW1vbk1vZHVsZSIsIkNvbXBvbmVudCIsImkwIiwiQ29tcG9uZW50IiwiQ29tbW9uTW9kdWxlIiwiaTAiLCJpMSIsIkNvbW1vbk1vZHVsZSIsIkNvbXBvbmVudCIsImkwIiwiaTEiXX0=
